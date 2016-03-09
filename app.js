@@ -16,9 +16,11 @@ var app = express()
 server.listen(3000);
 
 //Init Global GameServer
-var GameServer = require('./lib/gameserver');
+var gameServer = require('./lib/gameserver');
 
-var gameServer = new GameServer();
+//var gameServer = new GameServer();
+
+
 
 app.locals.gameServer = gameServer;
 
@@ -29,7 +31,7 @@ var puertoIO = new PuertoSocket(server  , gameServer);
 puertoIO.initPuertoListener();
 
 
-
+gameServer.createGame('test');
 
 
 

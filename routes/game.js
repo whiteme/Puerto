@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var cache = require('memory-cache');
+var path = require('path');
 //var app = require('../app')
 
 /* GET users listing. */
@@ -32,6 +33,10 @@ module.exports = function(app){
         var gameServer = app.locals.gameServer;
 
         console.log('new Game Creater name : ' + creator)
+    });
+
+    router.get('/game' , function(req , res , next){
+        res.sendfile(path.join(__dirname , '../public/views' , 'gameboard.html'));
     });
 
     return router;

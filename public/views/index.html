@@ -6,12 +6,19 @@
     <script src="../javascripts/lib/angular.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/javascripts/app.js"></script>
+    <script src="/javascripts/service.js"></script>
     <script src="/javascripts/controller.js"></script>
+
 
 </head>
 <body ng-app="puerto">
   <h1>Puerto Rico</h1>
-    <div name="gameList" ng-controller="indexInitCtrl" class="gameHall">
+    <div name="gameList" ng-controller="indexInitCtrl" ng-model="gameList">
+        <ul>
+
+
+            <li ng-repeat="(gameID , game) in gameList">GAME ID :   {{ gameID }}</li>
+        </ul>
     </div>
 
         <div>
