@@ -4,40 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Puerto Game Board</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.combine.min.css">
+
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <style>
+        div{border: 1px solid #ff8b29;}
+    </style>
+
     <script src="../javascripts/lib/jquery.min.js"></script>
     <script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="../javascripts/lib/angular.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/javascripts/app.js"></script>
+    <script src="/javascripts/service.js"></script>
+    <script src="/javascripts/controller.js"></script>
 
 </head>
-<body>
+<body ng-app="puerto">
+<h2>Game : {{gameID}} </h2>
 
-
-<div class="container-fluid" name="game-board-container">
+<div class="container-fluid" name="game-board-container" ng-controller="gameBoardontroller">
     <div class="row-fluid">
         <div class="span10" name="player-resource">
             <div class="row-fluid">
-                <div class="span6" name="player-plantation">
-                    <div class="row-fluid">
-                        <div class="span3">
+                <div class="span6" name="player-plantations">
+                    <div class="row-fluid" ng-repeat="i in getColSizeDefine(3) track by $index">
+                        <div class="span3" ng-repeat="j in getColSizeDefine(4) track by $index">
+                          <ng-init-draw-plantations>
+                              {{ $scope.player.plantationAry.length }}
+                          </ng-init-draw-plantations>
                         </div>
-                        <div class="span3">
-                        </div>
-                        <div class="span3">
-                        </div>
-                        <div class="span3">
-                        </div>
+
                     </div>
                 </div>
-                <div class="span6" name="player-building">
-                    <div class="row-fluid">
-                        <div class="span3">
-                        </div>
-                        <div class="span3">
-                        </div>
-                        <div class="span3">
-                        </div>
-                        <div class="span3">
+                <div class="span6" name="player-buildings">
+                    <div class="row-fluid" ng-repeat="i in getColSizeDefine(3)  track by $index">
+                        <div class="span3" ng-repeat="j in getColSizeDefine(4)  track by $index">
+                            <ng-init-draw-buildings>
+                                {{ $scope.player.plantationAry.length }}
+                            </ng-init-draw-buildings>
                         </div>
                     </div>
                 </div>
