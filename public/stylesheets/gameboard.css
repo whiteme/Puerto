@@ -1,0 +1,54 @@
+.p_board{
+    border : solid 1px #9d9d9d;
+}
+
+
+.span6{
+    padding : 2px;
+}
+.span3{
+    margin-bottom: 1px;
+}
+.game-resource{
+    margin-top: 1%;
+}
+
+.p_unit{
+    height:0;
+    width:10%;
+    padding-bottom:10%
+}
+.game-resource{padding: 2px;}
+
+.game-res-unit{
+    height:0;
+    width:10%;
+    padding-bottom:17%;
+}
+.game-plantation{
+    text-align: center;
+    border:solid 1px #cccccc;
+    margin: 3px;
+}
+.game_ship{
+    width: 95%;
+    border:solid 1px #cccccc;
+    MARGIN : 3PX;
+}
+.ship-name{
+
+
+}
+.ship-cap{
+    float: right;
+}
+.game-role{
+    text-align: center;
+    border:solid 1px #cccccc;
+    margin: 3px;
+}
+.game-item{
+    text-align: center;
+    border:solid 1px #cccccc;
+    margin: 3px;
+}
