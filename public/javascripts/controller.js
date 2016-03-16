@@ -10,15 +10,16 @@ angular.module('puerto').controller('indexInitCtrl' ,   function( $scope , puert
     });
 
 });
-angular.module('puerto').controller('gameBoardController' , function($scope , puertoSocket){
+angular.module('puertoGameBoard').controller('gameBoardController' , function($scope , puertoSocket){
 
     $scope.getColSizeDefine = function(num){
         return new Array(num);
     };
 
-    puertoSocket.on('getGameByIDResultEvent' , function(game){
+    puertoSocket.on('getGameByIDResultEvent' , function( game){
         $scope.game = game;
-        $scope.player = game.playerAry[0];
+        $scope.curPlayer = game.playerAry[0];
+
     });
 });
 

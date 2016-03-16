@@ -32,6 +32,7 @@ puertoIO.initPuertoListener();
 
 
 gameServer.createGame('test');
+gameServer.gamePool['test'].startGame();
 
 
 
