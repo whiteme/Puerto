@@ -24,7 +24,7 @@ var gameServer = require('./lib/gameserver');
 
 app.locals.gameServer = gameServer;
 
-var PuertoSocket = require('./lib/PuertoSocket');
+var PuertoSocket = require('./lib/puertoSocket');
 
 var puertoIO = new PuertoSocket(server  , gameServer);
 
