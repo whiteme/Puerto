@@ -3,8 +3,9 @@
  */
 'use strict';
 angular.module('puerto',[]).service('puertoSocket' , function($rootScope){
-    var socket = io.connect('http://localhost:3000');
-
+    var socket = io.connect('http://localhost:9090/');
+    socket.emit("role choose" , 'just a test');
+    console.log("init socket connection... ...")
     return {
         on: function(eventName, callback) {
             socket.on(eventName, function() {
@@ -15,7 +16,9 @@ angular.module('puerto',[]).service('puertoSocket' , function($rootScope){
             });
         },
         emit: function(eventName, data, callback) {
+            console.log(socket.emit)
             socket.emit(eventName, data, function() {
+                alert(arguments)
                 var args = arguments;
                 $rootScope.$apply(function() {
                     if(callback) {

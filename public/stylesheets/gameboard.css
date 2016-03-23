@@ -1,3 +1,42 @@
+/* 定义keyframe动画，命名为blink */
+
+@keyframes blink{
+    0%{border : solid 2px #3fc3dd;}
+    50%{border : solid 2px #dddb36;}
+    50.01%{border : solid 2px #34dd8e;} /* 注意这里定义50.01%立刻透明度为０，可以设置闪烁效果 */
+    100%{border : solid 2px #dd7b5a;}
+}
+
+
+
+/* 定义blink类*/
+.blink{
+    animation: blink .75s linear infinite;
+    /* 其它浏览器兼容性前缀 */
+    -webkit-animation: blink .75s linear infinite;
+    -moz-animation: blink .75s linear infinite;
+    -ms-animation: blink .75s linear infinite;
+    -o-animation: blink .75s linear infinite;
+
+
+}
+div{border-radius: 4px}
+.Corn{
+    background-color: #f4eb20;
+}
+.Indigo{
+    background-color: #cb1bdd;
+}
+.Sugar{
+    background-color: #f2efdd;
+}
+.Tobacco{
+    background-color: #dda463;
+}
+.Coffee{
+    background-color: #bb751b;
+}
+
 .p_board{
     border : solid 1px #9d9d9d;
 }
@@ -23,12 +62,13 @@
 .game-res-unit{
     height:0;
     width:10%;
-    padding-bottom:17%;
+    padding-bottom:19%;
 }
 .game-plantation{
     text-align: center;
     border:solid 1px #cccccc;
     margin: 3px;
+
 }
 .game_ship{
     width: 95%;
@@ -46,9 +86,11 @@
     text-align: center;
     border:solid 1px #cccccc;
     margin: 3px;
+    background-color: #f5f5f5;
 }
 .game-item{
     text-align: center;
     border:solid 1px #cccccc;
+    background-color: #f5f5f5;
     margin: 3px;
 }

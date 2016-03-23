@@ -5,7 +5,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/',  function (req, res) {
-    res.sendfile(path.join(__dirname , '../public/views' , 'index.html'));
+    res.sendfile(path.join(__dirname , '../public/views' , 'gameboard.html'));
 });
 
 router.post('/startgame',  function (req, res) {
