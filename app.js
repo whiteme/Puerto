@@ -9,7 +9,7 @@ var ejs = require('ejs');
 var app = express()
     //, http = require('http')
     //, server = http.createServer(app);
-server = app.listen(9090)
+server = app.listen(process.env.PORT || 9090 )
     //, io = require('socket.io')(server);
 //server.listen(3000);
 //Init Global GameServer
