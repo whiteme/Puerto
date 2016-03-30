@@ -65,11 +65,11 @@
         </div>
         <div class="span2 p_board game-res-unit">
             <h4>PLANTATION</h4>
-            <div class="game-plantation {{p.name}}" ng-repeat="p in game.plantationAry">
+            <div class="game-plantation {{p.name}}" ng-repeat="p in game.plantationAry  track by $index" item_index="{{$index}}" choose-plantation-directive>
                 {{p.name}}
             </div>
 
-            <H4>QUARRY</H4>
+            <H4 class="quarry-item" index="0">QUARRY</H4>
         </div>
         <div class="span2 p_board game-res-unit">
             <h6>COLONIST SUPPLY : {{game.colonistSupply}}</h6>

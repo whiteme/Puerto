@@ -19,9 +19,19 @@ angular.module('puertoGameBoard').controller('gameBoardController' ,function($sc
     $socket.on('getGameByIDResultEvent' , function( game){
         $scope.game = game;
         $scope.curPlayer = game.playerAry[0];
+        $scope.selfPlayer = game.playerAry[0];
 
 
     });
+
+
+    //$socket.on('plantataion-choose-event' , function( data){
+    //
+    //
+    //
+    //});
+
+
 
     $scope.switchPlayer = function(){
         $scope.curPlayer = this.player;
