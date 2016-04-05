@@ -1,1 +1,25 @@
-
+{
+  "name": "puerto",
+  "version": "0.0.1",
+  "description": "puerto rico board game",
+  "keywords": [
+    "angular",
+    "bootstrap",
+    "websocket",
+    "puerto rico",
+    "events",
+    "socket",
+    "io"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "engine.io": "1.6.8",
+    "express": ">=1.0.0"
+  },
+  "contributors": [
+    {
+      "name": "shenn",
+      "email": "32591425@qq.com"
+    }
+  ]
+}
