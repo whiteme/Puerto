@@ -2,6 +2,7 @@
   "name": "puerto",
   "version": "0.0.1",
   "description": "puerto rico board game",
+  "start": "node app.js"
   "keywords": [
     "angular",
     "bootstrap",
