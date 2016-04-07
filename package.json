@@ -23,7 +23,8 @@
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0",
-    "ejs" : ">1.0.x"
+    "ejs" : ">1.0.x",
+    "memory-cache" : ">1.0.x"
   },
   "engines": {    
     "node": ">0.10.x",
