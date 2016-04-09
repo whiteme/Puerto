@@ -21,10 +21,15 @@
         </ul>
     </div>
 
-        <form action="/startgame" method="post">
-          <input ngModel="player" type="text" name="playerName"/>
-            <input type="submit" value="Create Game">
-            <input type="button" value="Join Game">
+        <form action="/newGame" method="post">
+            Player Name:<input ngModel="player" type="text" name="playerName"/>
+            <input type="submit" value="New Game">
+        </form>
+        
+        <form action="/joinGame" method="post">
+            Player Name:<input ngModel="player" type="text" name="playerName"/>
+            Game ID:<input type="text" name="gameId"/>
+            <input type="submit" value="Join Game">
         </form>
 </body>
 </html>

@@ -26,8 +26,11 @@
 <body ng-app="puertoGameBoard">
 
 
-<div style="margin: 1%;"><h4>Game Round : </h4>
-<h4>Player : <span style="color: red;"><%= player.playerName%></span></h4></div>
+<div style="margin: 1%;">
+<h4>GAME ID : <span style="color: red;"><%= game.id%></span></h4>
+<h4>Game Round : </h4>
+<h4>Player : <span style="color: red;"><%= player.playerName%></span></h4>
+</div>
 <div class="container-fluid" np-app="puertoGameBoard" ng-controller="gameBoardController" ng-model="game">
     <div class="game-toolbar">
 
