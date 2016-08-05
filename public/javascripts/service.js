@@ -4,7 +4,7 @@
 'use strict';
 angular.module('puerto',[]).service('puertoSocket' , function($rootScope){
     var socket = io.connect('http://localhost:9090/');
-    socket.emit("role choose" , 'just a test');
+    //socket.emit("role choose" , 'just a test');
     console.log("init socket connection... ...")
     return {
         on: function(eventName, callback) {

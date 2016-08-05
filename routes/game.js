@@ -36,7 +36,7 @@ module.exports = function(app){
     });
 
     router.get('/game' , function(req , res , next){
-        res.sendfile(path.join(__dirname , '../public/views' , 'gameboard.html'));
+        res.sendfile(path.join(__dirname , '../public/views' , './gameid'));
     });
 
     return router;

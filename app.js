@@ -21,20 +21,7 @@ gameServer.setupFakeGame();
 var PuertoSocket = require('./lib/puertoSocket');
 var puertoIO = new PuertoSocket(server  , gameServer);
 puertoIO.initSocketEventHandler();
-//end comment
-//io.on('connect' , function(socket){
-//    console.log("Here new clinet is coming")
-//    //socket.emit("gameListResult" , gameServer.gamePool);
-//    socket.emit('getGameByIDResultEvent',gameServer.gamePool['DEMO_GAME_4_TEST']);
-//
-//
-//});
-//
-//io.on('message' , function(data){
-//    console.log(" ===  role choose event  ===")
-//    //var game = gameServer.gamePool[data.gameID];
-//    //var para = game.executeRoleChoose(data.rolename);
-//});
+
 
 
 
@@ -45,8 +32,7 @@ puertoIO.initSocketEventHandler();
 app.set('views', path.join(__dirname, 'views'));
 app.engine('html', ejs.__express);
 app.set('view engine', 'html');
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -67,39 +53,6 @@ app.get('/',  function (req, res) {
     res.sendfile(path.join(__dirname , './public/views' , 'index.html'));
 });
 
-app.post('/newGame',  function (req, res) {
-    var playerName = req.body.playerName;
-    console.info("new Game: " + playerName);
-    
-    var player = new Player(playerName);
-    var result = {
-        'game' : new Room(server,player),
-        'player': player
-    };
- 
-    res.render( path.join(__dirname, './public/views','gameboard'),result);
-});
-
-app.post('/joinGame',  function (req, res) {
-    var gameId = req.body.gameId;
-    var playerName = req.body.playerName;
-    
-    console.info("join Game: " + playerName + " join into room:" + gameId);
-    
-    var room = rooms["_"+gameId];
-    if(room){
-        var player = new Player(playerName);
-        room.join(player);
-        var result = {
-           'game' : room,
-           'player': player
-        };
-       
-       res.render( path.join(__dirname, './public/views','gameboard'),result);
-    }else{
-       res.sendfile(path.join(__dirname , './public/views' , 'index.html'));
-    }
-});
 
 
 module.exports = app;

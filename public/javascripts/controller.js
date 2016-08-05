@@ -2,14 +2,6 @@
  * Created by shenn on 16-3-1.
  */
 'use strict';
-angular.module('puerto').controller('indexInitCtrl' ,   function( $scope , $socket){
-
-    $socket.on('gameListResult' , function(data){
-
-        $scope.gameList = data;
-    });
-
-});
 angular.module('puertoGameBoard').controller('gameBoardController' ,function($scope , $socket){
 
     $scope.getColSizeDefine = function(num){

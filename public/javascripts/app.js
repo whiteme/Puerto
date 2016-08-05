@@ -1,8 +1,22 @@
-var puertoApp = angular.module('puerto' , [] );
 var puertoApp = angular.module('puertoGameBoard' , ['ngSocket'] ).config(["$socketProvider", function ($socketProvider) {
-    //$socketProvider.setUrl("http://localhost:9090");
+
+
 }]);
 
 
-//puerto.config(function($routeProvider){
-//});
+puertoApp.config(function($routeProvider){
+    $routeProvider
+        .when('/', {
+            templateUrl: 'index.html',
+            controller: 'RouteListCtl'
+        })
+        .when('/game', {
+            templateUrl: 'gameborad.html',
+            controller: 'gameBoardController'
+        })
+        .otherwise({
+            redirectTo: '/'
+        });
+
+
+});
